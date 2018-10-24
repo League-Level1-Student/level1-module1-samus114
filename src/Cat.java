@@ -13,8 +13,6 @@
 
 		// 3. Kill the Cat!
 
-
-
 public class Cat {
 
 	private String name;
