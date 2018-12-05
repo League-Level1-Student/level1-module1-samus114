@@ -4,6 +4,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -13,6 +14,7 @@ JFrame frame = new JFrame();
 JPanel panel = new JPanel();
 JTextField textField = new JTextField(16);
 JButton button = new JButton();
+JLabel label = new JLabel("    ");
 	public static void main(String[] args) {
 	binaryConverter B = new binaryConverter();
 	B.gui();
@@ -23,6 +25,7 @@ JButton button = new JButton();
 		panel.add(button);
 		button.setPreferredSize(new Dimension(60, 20));
 		button.setText("convert");
+		panel.add(label);
 		button.addMouseListener(this);
 		frame.pack();
 		frame.setVisible(true);
@@ -36,7 +39,8 @@ JButton button = new JButton();
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		String userInput = textField.getText();
+		label.setText(convert(userInput));
 	}
 	@Override
 	public void mouseReleased(MouseEvent e) {
